@@ -1,0 +1,35 @@
+*   Why JPA Was Introduced
+    1. Writing plain JDBC code (like ResultSet, Statement, etc.) was boilerplate-heavy and error-prone.
+    2. ORM tools like Hibernate made this easier, but needed a standard API → JPA was created.
+    3. JPA is a specification, not a tool; Hibernate is the most popular implementation
+    
+*   What is JPA?
+    JPA is a Java standard for mapping Java objects to relational database tables.
+    Enables you to interact with the DB using Java objects, not SQL queries.
+
+*   | Concept              | Description                               |
+    | -------------------- | ----------------------------------------- |
+    | `@Entity`            | Class mapped to a table in DB             |
+    | `@Id`                | Primary key of the entity                 |
+    | `@GeneratedValue`    | Auto-generate primary key                 |
+    | `@Column`            | Maps a field to a DB column               |
+    | `@Table(name="...")` | (Optional) Specify custom table name      |
+    | `@Repository`        | Marks DAO layer (can use `JpaRepository`) |
+        
+*   JPA Lifecycle (EntityManager does this under the hood)
+    Persist → Save new object to DB
+
+    Find → Retrieve object by ID
+
+    Merge → Update existing object
+
+    Remove → Delete object        
+
+*    Benefits
+    Cleaner, readable code (no SQL in Java)
+
+    Built-in transaction handling
+
+    Portable across databases
+
+    Easy integration with Spring Boot    
